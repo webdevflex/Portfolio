@@ -60,6 +60,110 @@
     }
    
 }
+@media(max-width:768px){
+    .header-menu-list{
+        display: none;
+        font-size: 21px;
+        li{
+           
+            width: 90%;
+            border-radius: 20px;
+        }
+    }
+    .btn-burger-menu{
+        display: block;
+    }
+    .gamburger-menu{
+        display: block;
+        // display: flex;
+    }
+   
+   
+    .header-menu{
+        position: absolute;
+        top: 0;
+        height: 100vh;
+        background-color: #63332bf2;
+        left: -210px;
+        .btn{
+            clip-path: none;
+        }
+    }
+    .btn-burger-menu{
+        width: 30px;
+        height: 30px;
+        border: none;
+        position: relative;
+        background-color: transparent;
+
+        left: 210px;
+      
+       
+        span{
+            width: 100%;
+            height: 2px;
+            background-color: black;
+            display: block;
+           
+        
+            &::before{
+                content: '';
+                width: 100%;
+                height: 2px;
+                position: absolute;
+                left: 0;
+                top: 7px;
+                background-color: inherit;
+            }
+            &::after{
+                content: '';
+                width: 100%;
+                height: 2px;
+                position: absolute; 
+                top: 21px;
+                left: 0;
+                background-color: inherit;
+            }
+        }
+      
+    }
+    .active-mobile-menu{
+        left: 0;
+        transition: 1s;
+        
+    }
+    .active{
+        left: 0;
+        background-color: rgba(253, 253, 253, 0.452);
+        border-radius: 50%;
+        
+        outline: none;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        padding-left: 3px;
+        padding-right: 2px;
+
+       
+        // padding: 2px 3px;
+        
+        &:hover{
+            background-color: #B88C80;
+        }
+        span {
+            transform: rotate(47deg);
+        &::before{
+            transform: rotate(87deg);
+            top: 0px;
+        }
+        &::after{
+            display: none;
+        }
+    }
+  }
+
+
+  
+}
 @media (max-width:750px){
     .section-mywork{
         height: 700px;
@@ -87,6 +191,7 @@
         margin-right: 15px;
         margin-left: 15px;
     }
+    
 }
 @media (max-width:650px){
     .footer-info{
@@ -183,6 +288,9 @@
     }
     .section-mywork{
        height: 600px;
+    }
+    .head-sub-text{
+        font-size: 18px;
     }
 }
 @media (max-width:440px){

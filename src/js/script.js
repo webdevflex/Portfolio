@@ -48,9 +48,10 @@ setTimeout(function() {
  }, 3000);
 
  //задержка меню
- let headmenu =document.querySelector('.header-menu-list')
+ let headmenu = document.querySelector('.header-menu-list')
 setTimeout(function() {
-    headmenu.style.display = 'block';
+    // headmenu.style.display = 'block';
+    headmenu.style. opacity = '1';
  }, 3000);
 
 
@@ -74,39 +75,6 @@ setTimeout(function() {
     }
   });
 
-  // circleBar.animate(0.85, {
-  //   duration: 3000,//время за которое выполниться анимация 
-  // });
-
-//   $(".skills-item").waypoint(function(){
-//     circleBar.animate(1.0);  // Number from 0.0 to 1.0
-//  }, {offset: "50%"})
-
-//  $(".skills-item").waypoint(function(){
-//   circleBar.animate(0.85,{duration: 3000});  // Number from 0.0 to 1.0
-// }, {offset: "50%"})
-
-
-
-  // circleBar.animate(0.85, {
-  //   duration: 3000//время за которое выполниться анимация 
-  // });
-// var bar = new ProgressBar.Line('.skills-item', {
-//   strokeWidth: 5,
-//   easing: 'easeInOut',
-//   duration: 1400,
-//   color: '#FFEA82',
-//   trailColor: '#eee',
-//   trailWidth: 2,
-// });
-
-
-
-
-
-
-
-
 
   var circleBar2 = new ProgressBar.Circle('.skills-item2', {
     strokeWidth: 7,
@@ -127,9 +95,6 @@ setTimeout(function() {
     }
   });
 
-  // circleBar.animate(0.60, {
-  //   duration: 1500
-  // });
 
   var circleBar3 = new ProgressBar.Circle('.skills-item3', {
     strokeWidth: 7,
@@ -165,7 +130,7 @@ $('.skills-item3').waypoint(function(){
 
 
 
-// lineskills
+// // lineskills
 var lineeBar = new ProgressBar.Line( '.line-skills-item', {
   strokeWidth:1,//7
   trailWidth: 4,//10
@@ -184,7 +149,7 @@ var lineeBar = new ProgressBar.Line( '.line-skills-item', {
   }
 });
 $('.line-skills-item').waypoint(function(){
-  lineeBar.animate(0.45,{duration: 3000});  // Number from 0.0 to 1.0
+  lineeBar.animate(0.45,{duration: 2000});  // Number from 0.0 to 1.0
 }, {offset: "50%"})
 
 var lineeBar2 = new ProgressBar.Line( '.line-skills-item2', {
@@ -226,11 +191,11 @@ var lineeBar3 = new ProgressBar.Line( '.line-skills-item3', {
 
 
 $('.line-skills-item2').waypoint(function(){
-  lineeBar2.animate(0.90,{duration: 3000});  // Number from 0.0 to 1.0
+  lineeBar2.animate(0.90,{duration: 2000});  // Number from 0.0 to 1.0
 }, {offset: "50%"})
 
 $('.line-skills-item3').waypoint(function(){
-  lineeBar3.animate(0.90,{duration: 3000});  // Number from 0.0 to 1.0
+  lineeBar3.animate(0.90,{duration: 2000});  // Number from 0.0 to 1.0
 }, {offset: "50%"})
 
 //Slick Slider
@@ -266,4 +231,29 @@ function copytext(el) {
   $tmp.remove();
   }
 
+//burger close-open
 
+let burger = document.querySelector('.btn-burger-menu');
+let burger_menu = document.querySelector('.header-menu');
+let no_scroll_menu = document.querySelector('body');
+
+burger.addEventListener("click", addclass);
+
+function addclass(){
+  this.classList.toggle('active');
+  burger_menu.classList.toggle('active-mobile-menu');
+  no_scroll_menu.classList.toggle('no_scroll')
+}
+
+//после клика на ссылки меню убрать клас у body
+
+
+let mobile_link = document.querySelector('.header-menu-list a');
+
+mobile_link.addEventListener('click', delclass);
+
+function delclass(){
+  no_scroll_menu.classList.remove('no_scroll')
+  burger_menu.classList.remove('active-mobile-menu')
+  burger.classList.remove('active')
+}

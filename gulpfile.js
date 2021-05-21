@@ -21,9 +21,9 @@ const jsFiles = [
 function scripts(){
     return gulp.src(jsFiles)
         .pipe(concat('script.min.js'))
-        .pipe(uglify({//минификация файлов
-            // toplevel:true, //самое строгое сжатие
-        }))
+        // .pipe(uglify({//минификация файлов
+        //     // toplevel:true, //самое строгое сжатие
+        // }))
         .pipe(gulp.dest('build/js/'))
         .pipe(browserSync.stream());
 }
